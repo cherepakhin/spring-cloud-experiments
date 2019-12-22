@@ -3,6 +3,9 @@ spring:
     config:
       server:
         git:
+#          Можно разместить в любом git-репозитории
           uri: https://github.com/cherepakhin/spring-cloud-experiments
+#          Подкаталог для хранения конфигураций
+          search-paths: config
 server:
   port: 9999
