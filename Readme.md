@@ -1,13 +1,13 @@
-##Опыты со Spring Cloud
+## Опыты со Spring Cloud
 
 Описание проектов в репозитории
 
-###eureka1 
+### eureka1 
 
 Центральный регистратор Eureka сервисов и клиентов. Доступен по адресу
 [http://127.0.0.1:8761](http://127.0.0.1:8761)
 
-###eureka1-service
+### eureka1-service
 
 Сервис, предоставлящий данные клиентам. В сервисе rest-controller. При заапросе GET по адресу http://localhost:????/ctrl1 выдается текущее время
 Запись ниже означает что копии сервисов будут доступны для клиентов на любом свободном порту.
@@ -18,7 +18,7 @@ server:
 
 Конф-ию порта будет определять и предоставлять клиентам регистратор **eureka1**
 
-###eureka1-consumer
+### eureka1-consumer
 
 Клиент. Выполнен в виде контроллера. 
 При GET запросе [http://127.0.0.1:8888/consume-ctrl1](http://127.0.0.1:8888/consume-ctrl1) находит через **eureka1** сервис **eureka1-service** и выводит полученную инфу. Название **eureka1-service** задано в application.yml.
@@ -27,7 +27,7 @@ server:
 service-ctrl1: http://eureka1-service-ctrl1/ctrl1
 ````
 
-###config-server1
+### config-server1
 
 Проект config-server
 
