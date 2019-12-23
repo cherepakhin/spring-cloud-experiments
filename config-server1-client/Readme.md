@@ -1,0 +1,1 @@
+## Клиент Spring Cloud Config Server
