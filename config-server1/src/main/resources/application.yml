@@ -2,13 +2,19 @@ spring:
   cloud:
     config:
       server:
-        git:
+#        git:
 #          Можно разместить в любом git-репозитории
-          uri: https://github.com/cherepakhin/spring-cloud-experiments
+#          uri: https://github.com/cherepakhin/spring-cloud-experiments
 #          Подкаталог для хранения конфигураций
-          search-paths: config
+#          search-paths: config
 #          Идентификация для git
 #          username: GitUserName
 #          password: GitPassword
+
+        # Конфигурация из локального репозитория
+        # В /home/vasi/prog/java/spring-boot/config-repo должен быть создан git репозиторий
+        git:
+          uri: file://home/vasi/prog/java/spring-boot/config-repo
+
 server:
   port: 9999

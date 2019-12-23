@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: client1
+
+server:
+  port: 8091
+nameProp: Value property "nameProp" from LOCAL application.yml

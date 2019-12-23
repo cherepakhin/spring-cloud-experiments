@@ -49,3 +49,29 @@ curl http://127.0.0.1:9999/application/default/master
   "propertySources": []
 }  
 ```
+
+### config-server1-client
+
+Первый клиент для конфиг-сервера *config-server1*
+
+Для проверки использовать 
+```shell script
+http :8091/ctrl1
+``` 
+
+### config-server1-client2
+
+Второй клиент для конфиг-сервера *config-server1*.
+Проверяются раздельные конфигурации для разных приложений. Имя приложения задается параметром
+```
+spring:
+  application:
+    name: client2
+```
+
+Для проверки использовать 
+````shell script
+http :8092/ctrl2
+```` 
+
+>Для проверки работы обоих клиентов используется [Проект с конфигурациями](https://github.com/cherepakhin/config-repo)
