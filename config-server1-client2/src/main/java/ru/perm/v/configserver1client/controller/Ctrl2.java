@@ -15,7 +15,7 @@ import java.util.Properties;
 import java.util.stream.StreamSupport;
 
 @RestController
-@RequestMapping("/ctrl2")
+@RequestMapping("/${spring.application.name}/ctrl2")
 public class Ctrl2 {
 
 	@Value("${nameProp}")
@@ -26,13 +26,6 @@ public class Ctrl2 {
 
 	@GetMapping("")
 	public String getProp() {
-		Properties props = new Properties();
-		MutablePropertySources propSrcs = ((AbstractEnvironment) springEnv).getPropertySources();
-		StreamSupport.stream(propSrcs.spliterator(), false)
-				.filter(ps -> ps instanceof EnumerablePropertySource)
-				.map(ps -> ((EnumerablePropertySource) ps).getPropertyNames())
-				.flatMap(Arrays::<String>stream)
-				.forEach(propName -> props.setProperty(propName, springEnv.getProperty(propName)));
 		return prop;
 	}
 

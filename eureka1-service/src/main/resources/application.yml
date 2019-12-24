@@ -6,4 +6,4 @@ server:
   port: 0
 spring:
   application:
-    name: eureka1-service-ctrl1
+    name: eureka1-service1

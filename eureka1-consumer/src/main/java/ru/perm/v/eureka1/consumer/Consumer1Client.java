@@ -12,7 +12,7 @@ public class Consumer1Client {
 
 	private static final Logger logger = LoggerFactory.getLogger(Consumer1Client.class);
 	private RestTemplate rest;
-	@Value("${service-ctrl1}")
+	@Value("${service1-ctrl1}")
 	String service;
 
 	public Consumer1Client(@LoadBalanced RestTemplate rest) {
