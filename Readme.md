@@ -86,5 +86,32 @@ http :8092/ctrl2
 
 Feign сервис для маршрутизации к сервису [eureka1-service](#eureka1-service). Сконфигурирован на порту 8093. Данные с [eureka1-service](#eureka1-service) доступны по запросу:
 ```shell script
-http :8093/feign1/ctrl
+http :8093/feign1/ctrl1
 ```
+### zuul-client1
+
+Zuul сервис для маршрутизации к сервису [eureka1-service](#eureka1-service). Сконфигурирован на порту 8093. Данные с [eureka1-service](#eureka1-service) доступны по запросу:
+
+```shell script
+http :8094/zuulservice1/ctrl1
+```
+
+Основная настройка сделана в application.yml
+
+```yaml
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8761/eureka/
+server:
+  port: 8094
+
+spring:
+  application:
+    name: zuul-service1
+zuul:
+  routes:
+    service1:
+      path: /zuulservice1/**
+      serviceId: eureka1-service1
+``` 
