@@ -2,11 +2,13 @@
 
 Описание проектов в репозитории
 
+<a name="eureka1"></a>
 ### eureka1 
 
 Центральный регистратор Eureka сервисов и клиентов. Доступен по адресу
 [http://127.0.0.1:8761](http://127.0.0.1:8761)
 
+<a name="eureka1-service"></a>
 ### eureka1-service
 
 Сервис, предоставлящий данные клиентам. В сервисе rest-controller. При заапросе GET по адресу http://localhost:????/ctrl1 выдается текущее время
@@ -16,17 +18,17 @@ server:
     port: 0
 ````
 
-Конф-ию порта будет определять и предоставлять клиентам регистратор **eureka1**
+Конф-ию порта будет определять и предоставлять клиентам регистратор [eureka1](#eureka1)
 
 ### eureka1-consumer
 
 Клиент. Выполнен в виде контроллера. 
-При GET запросе [http://127.0.0.1:8888/consume-ctrl1](http://127.0.0.1:8888/consume-ctrl1) находит через **eureka1** сервис **eureka1-service** и выводит полученную инфу. Название **eureka1-service** задано в application.yml.
+При GET запросе [http://127.0.0.1:8888/consume-ctrl1](http://127.0.0.1:8888/consume-ctrl1) находит через [eureka1](#eureka1) сервис [eureka1-service](#eureka1-service) и выводит полученную инфу. Название [eureka1-service](#eureka1-service) задано в application.yml.
 
 ````
 service-ctrl1: http://eureka1-service-ctrl1/ctrl1
 ````
-
+<a name="config-server1"></a>
 ### config-server1
 
 Проект config-server
@@ -52,7 +54,7 @@ curl http://127.0.0.1:9999/application/default/master
 
 ### config-server1-client
 
-Первый клиент для конфиг-сервера *config-server1*
+Первый клиент для конфиг-сервера [config-server1](config-server1)
 
 Для проверки использовать 
 ```shell script
@@ -61,7 +63,7 @@ http :8091/ctrl1
 
 ### config-server1-client2
 
-Второй клиент для конфиг-сервера *config-server1*.
+Второй клиент для конфиг-сервера [config-server1](config-server1).
 Проверяются раздельные конфигурации для разных приложений. Имя приложения задается параметром
 ```
 spring:
@@ -82,7 +84,7 @@ http :8092/ctrl2
 
 ### feign-client
 
-Feign сервис для маршрутизации к сервису eureka1-service. Сконфигурирован на порту 8093. Данные с eureka1-service доступны по запросу:
+Feign сервис для маршрутизации к сервису [eureka1-service](eureka1-service). Сконфигурирован на порту 8093. Данные с [eureka1-service](#eureka1-service) доступны по запросу:
 ```shell script
 http :8093/feign1/ctrl
 ```
