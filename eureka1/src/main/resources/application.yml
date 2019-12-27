@@ -1,3 +1,7 @@
+#Имя spring сервиса
+spring:
+  application:
+    name: eureka-registry
 server:
   port: 8761
 eureka:
@@ -6,7 +10,9 @@ eureka:
 #  server:
 #    enable-self-preservation: false
   client:
+#    Запрет сервису Eureka регистрировать самого себя
     fetch-registry: false
     register-with-eureka: false
+
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka

@@ -79,3 +79,10 @@ http :8092/ctrl2
 ### Соединил все вместе
 
 ![Схема](doc/schema.png "Схема")
+
+### feign-client
+
+Feign сервис для маршрутизации к сервису eureka1-service. Сконфигурирован на порту 8093. Данные с eureka1-service доступны по запросу:
+```shell script
+http :8093/feign1/ctrl
+```
