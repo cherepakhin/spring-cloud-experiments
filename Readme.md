@@ -54,7 +54,7 @@ curl http://127.0.0.1:9999/application/default/master
 
 ### config-server1-client
 
-Первый клиент для конфиг-сервера [config-server1](config-server1)
+Первый клиент для конфиг-сервера [config-server1](#config-server1)
 
 Для проверки использовать 
 ```shell script
@@ -63,7 +63,7 @@ http :8091/ctrl1
 
 ### config-server1-client2
 
-Второй клиент для конфиг-сервера [config-server1](config-server1).
+Второй клиент для конфиг-сервера [config-server1](#config-server1).
 Проверяются раздельные конфигурации для разных приложений. Имя приложения задается параметром
 ```
 spring:
@@ -84,7 +84,7 @@ http :8092/ctrl2
 
 ### feign-client
 
-Feign сервис для маршрутизации к сервису [eureka1-service](eureka1-service). Сконфигурирован на порту 8093. Данные с [eureka1-service](#eureka1-service) доступны по запросу:
+Feign сервис для маршрутизации к сервису [eureka1-service](#eureka1-service). Сконфигурирован на порту 8093. Данные с [eureka1-service](#eureka1-service) доступны по запросу:
 ```shell script
 http :8093/feign1/ctrl
 ```
